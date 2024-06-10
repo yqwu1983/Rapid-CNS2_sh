@@ -14,7 +14,7 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.16.1/samtools-
 RUN wget https://github.com/samtools/bcftools/releases/download/1.16/bcftools-1.16.tar.bz2 -P /applications/ && tar -vxjf /applications/bcftools-1.16.tar.bz2 -C /applications && cd /applications/bcftools-1.16 && ./configure --prefix=/ && make
 
 # LIFTOVER
-RUN wget 'ftp://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz' -O /applications/hg19ToHg38.over.chain.gz && rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/liftOver /applications
+RUN wget 'https://hgdownload.cse.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz' -O /applications/hg19ToHg38.over.chain.gz && rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/liftOver /applications
 
 # MODBAM2BED
 RUN cd /applications/ && git clone --recursive https://github.com/epi2me-labs/modbam2bed.git --branch v0.5.3 && cd /applications/modbam2bed && make modbam2bed
