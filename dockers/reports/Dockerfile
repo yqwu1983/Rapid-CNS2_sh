@@ -2,7 +2,9 @@ FROM rstudio/r-base:focal
 
 LABEL maintainer "Wu YuQian <yqwu1983@126.com>"
 
-RUN apt-get update -y && apt-get install -y pandoc nano texlive-latex-base texlive-latex-extra python3 python3-pip && pip install pandas openpyxl plotly kaleido
+RUN apt update && apt install g++ gfortran gfortran-doc libbz2-dev libcurl4-openssl-dev libfontconfig1-dev libgdal-dev libgeos-dev liblzma-dev libpcre2-dev libproj-dev \
+    libreadline-dev libudunits2-dev libxml2 make pkg-config zlib1g-dev pandoc nano texlive-latex-base texlive-latex-extra python3 python3-pip -y && \
+    pip install pandas openpyxl plotly kaleido
 
 RUN wget https://cdn.posit.co/r/ubuntu-2004/pkgs/r-4.3.3_1_amd64.deb && \
     apt-get update -qq && \
