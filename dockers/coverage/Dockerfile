@@ -7,7 +7,6 @@ RUN chmod 755 /mosdepth && pip install pandas matplotlib seaborn plotly kaleido
 
 COPY runMosdepth.sh /runMosdepth.sh
 COPY coverage_plot_plotly.py /coverage_plot.py
-COPY template.txt /template.txt
 RUN chmod 777 /runMosdepth.sh && chmod 777 /coverage_plot.py
 
 CMD /runMosdepth.sh
